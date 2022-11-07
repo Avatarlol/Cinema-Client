@@ -1,0 +1,12 @@
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+button{
+  cursor: pointer;
+}

@@ -1,0 +1,25 @@
+.moviecard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 5px;
+    height: 315px;
+    width: 186px;
+    text-align: center;
+}
+
+.moviecard-container a{
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 35px;
+    color:goldenrod;
+    font-weight: bold;
+    
+}
+
+.moviecard-container img{
+    height: 280px;
+
+}

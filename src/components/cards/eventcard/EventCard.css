@@ -1,0 +1,53 @@
+.eventcard-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.eventcard-container img{
+    height: 150px;
+    width: 100px;
+}
+
+.eventcard-container div{
+    border: 1px solid black;
+    text-align:center;
+    padding: 15px;
+    height: 150px;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.eventcard-container .name{
+    width: 20%;
+}
+
+.eventcard-container .date{
+    width: 10%;
+}
+
+.eventcard-container .time{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    max-height: 150px;
+}
+
+.eventcard-container .purchase{
+    width: 15%;
+    padding-top: 40px;
+}
+
+.eventcard-container button{
+
+    all:initial;
+    color: white;
+    font-size: x-large;
+    background-color: rgb(2, 0, 119);
+    width: 140px;
+    text-align: center;
+    height: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+}
