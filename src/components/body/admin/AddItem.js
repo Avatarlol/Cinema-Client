@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import EventForm from "./forms/eventform/EventForm";
 import Form from "./forms/Form";
 import MovieForm from "./forms/movieform/MovieForm";
 
@@ -15,7 +16,7 @@ function AddItem() {
         {
             key: '1',
             title: 'Events',
-            content: <div> events form here </div>
+            content: <EventForm/>
         },
         {
             key: '2',
@@ -31,7 +32,6 @@ function AddItem() {
             {forms.map(form => {return(
                 <Form form={form} setActiveForm={setActiveForm} activeForm={activeForm}/>
             )})}
-            {/* <Form form={forms[0]} setActiveForm={setActiveForm} activeForm={activeForm}/> */}
         </React.Fragment>
      );
 }

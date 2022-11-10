@@ -1,11 +1,11 @@
-import React from "react";
-import { useRef } from "react";
-import { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import './MovieForm.css'
+import { isFormValid } from "../Form";
 
 function MovieForm() {
 
     const [genres, setGenres] = useState([])
+    const [error, setError] = useState('')
     const nameRef = useRef('')
     const genreRef = useRef('')
     const lengthRef = useRef('')
@@ -19,7 +19,9 @@ function MovieForm() {
             }
             const data = await response.json();
             setGenres(data);
-          } catch (error) {}
+          } catch (error) {
+            setError("There's an issue with the server.")
+          }
       });
 
       useEffect(() => {
@@ -32,8 +34,25 @@ function MovieForm() {
           img.src = url.value
       }
 
-      const addMovie = (event) => {
-        event.preventDefault();
+      const addMovieHandler = (e) => {
+        e.preventDefault();
+        setError('')
+
+        try{
+        const parent = document.getElementById('movie-form')
+        const valid = isFormValid(parent)
+          if(!valid){
+            throw '1'
+          }
+        
+
+        }catch(error){
+          switch(error){
+            case '1':{setError('Fill all the fields!'); break;}
+            default: throw error;
+          }
+        }
+
         const newMovie = {
           name: nameRef.current.value,
           genre: genreRef.current.value,
@@ -44,10 +63,12 @@ function MovieForm() {
       }
 
     return ( 
-        <form>
+        <form id='movie-form'>
+            <div className="error">{error}</div>
+            <br/>
             Movie name
             <br/>
-            <input type='text' ref={nameRef}/>
+            <input id='movie-name' type='text' ref={nameRef} required={true}/>
             <br/><br/>
             Genre
             <br/>
@@ -59,14 +80,14 @@ function MovieForm() {
             <br/><br/>
             Length in minutes
             <br/>
-            <input type="number" style={{width: '80px'}} ref={lengthRef}/>
+            <input type="number" style={{width: '80px'}} min='10' max='3000' ref={lengthRef} required={true}/>
             <br/><br/>
             Image URL
             <br/>
+            <input id='url' type='url' style={{width: '50%', maxWidth: '350px'}} onBlur={loadImg} ref={imageRef} required={true}/>
             <img id='img'/>
-            <input id='url' type='url' style={{width: '50%', maxWidth: '350px'}} onBlur={loadImg} ref={imageRef}/>
             <br/><br/>
-            <button onClick={addMovie} > Submit </button>
+            <button onClick={addMovieHandler} > Submit </button>
         </form>
      );
 }

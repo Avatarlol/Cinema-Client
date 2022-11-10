@@ -2,10 +2,10 @@ form{
     position: relative;
 }
 
-form img{
+form>img{
     position: absolute;
     
-    left: 60%;
+    left: 50%;
     bottom: 50px;
     height: 200px;
     width: 125px;

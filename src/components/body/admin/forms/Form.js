@@ -1,6 +1,15 @@
 import React from "react";
 import './Form.css'
 
+export function isFormValid(parentElement) {
+    for (const element of parentElement){
+        if(!element.checkValidity()){
+            return false;
+        }
+      }
+      return true;
+}
+
 function Form(props) {
 
     const toggleForm = event => {
