@@ -34,7 +34,6 @@ function MoviesFilters(props) {
           if(name=='' && genre==''){
             response = await fetch('movie/all');
           }else if(name.length > 0){
-            console.log('entered name');
             const requestOptions = {
               method: "POST",
               headers: { "Content-Type": "application/json" , token: ''},
@@ -45,7 +44,6 @@ function MoviesFilters(props) {
             };
             response = await fetch('movie/filter', requestOptions)
           }else if(genre.length > 0){
-            console.log('entered genre');
             const requestOptions = {
               method: "POST",
               headers: { "Content-Type": "application/json" , token: ''},
@@ -94,7 +92,7 @@ function MoviesFilters(props) {
     return (  
         <React.Fragment>
 
-            <h3>Filters</h3>
+            <h3>Movies filter</h3>
 
             <div className="filters-container">
                 
@@ -106,8 +104,7 @@ function MoviesFilters(props) {
                 <option value='' >All</option>
                 {genres.map(element => {return(
                     <option key={element} value={element}>{element}</option>
-                )}
-                    )}
+                )})}
                 </select> 
                 </filters>
 

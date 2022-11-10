@@ -1,0 +1,29 @@
+.tabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+.tabs button{
+    all: initial;
+    margin: -1px;
+    width: 40%;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(173, 173, 173);
+    border: 2px solid black;
+}
+
+
+
+.tabs .active{
+    background-color: white;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

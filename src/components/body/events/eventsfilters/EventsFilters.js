@@ -1,5 +1,4 @@
-import React from "react";
-import { useRef, useCallback } from "react";
+import React, { useRef, useCallback } from "react";
 import '../../Filters.css'
 
 function EventsFilters(props) {
@@ -41,7 +40,7 @@ function EventsFilters(props) {
 
     return ( 
         <React.Fragment>
-            <h3>Filters</h3>
+            <h3>Events filters</h3>
             <div className="filters-container">
                 
                 <filters>

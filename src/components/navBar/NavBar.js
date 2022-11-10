@@ -15,18 +15,12 @@ function NavBar(props) {
     return ( 
         <div id='navbar' className='navbar-container'>
 
-                <NavLink to='/'>
-                <button id='0' name='tabs' className={props.activeTab==='0'? 'active' : ''} onClick={toggleTabs}> <img  id='0' src='favicon.ico'/> </button>
-                </NavLink>
-                <NavLink to='/movies'>
-                <button id='1' name='tabs' className={props.activeTab==='1'? 'active' : ''} onClick={toggleTabs}>Movies</button>
-                </NavLink>
-                <NavLink to='/events'>
-                <button id='2' name='tabs' className={props.activeTab==='2'? 'active' : ''} onClick={toggleTabs}>Events</button>
-                </NavLink>
-                <NavLink to='/admin'>
-                <button id='3' name='tabs' className={props.activeTab==='3'? 'active' : ''} onClick={toggleTabs}>Admin</button>
-                </NavLink>
+                {props.tabs.map(tab => {
+                    return(
+                    <NavLink to={tab.path}>
+                    <button id={tab.key} name='tabs' className={props.activeTab===tab.key? 'active' : ''} onClick={toggleTabs}>{tab.title}</button>
+                    </NavLink>
+                )})}
         
         </div>
      );

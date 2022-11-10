@@ -1,0 +1,26 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 80%;
+    background-color: rgb(218, 218, 218);
+    align-self: center;
+    border: black solid 1px;
+}
+
+.form>button{
+    all: initial;
+    height: 50px;
+    font-size: 50px;
+    color: rgb(204, 139, 0);
+    background-color: rgb(119, 0, 99);
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    
+}
+
+.form .content{
+    font-size: large;
+    padding: 20px;
+}

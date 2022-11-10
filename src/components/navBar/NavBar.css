@@ -4,7 +4,7 @@
     justify-content: center;
 }
 
-button {
+.navbar-container> * > button {
     
     background-color: rgb(175, 175, 175);
     color: black;
@@ -21,7 +21,7 @@ button {
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-width: 0px;
+    border-width: 1px;
 }
 
 img {
@@ -29,7 +29,7 @@ img {
     margin-bottom: -10px;
 }
 
-button:hover{
+.navbar-container> * > button:hover{
     animation-name: my-animation;
     margin-top:5px;
     transition: 0.2s;
